@@ -6,15 +6,6 @@ import random
 import getpass
 import os
 
-#Aqui se crean las listas con los servicios existentes
-Spotify=['Spotify',5000]
-Netflix=['Netflix',6000]
-Agua=['Agua',35000]
-Luz=['Luz',20000]
-Internet=['Internet',30000]
-HBO_Max=['HBO Max',4000]
-Prime=['Prime',2500]
-
 #Se crean las variables para la compra y venta del colon, dolar y bitcoin
 
 venta_Dolar=0
@@ -23,7 +14,11 @@ venta_Bitcoin=0
 compra_Bitcoin=0
 venta_Colon=0
 compra_Colon=0
-servicios=[Spotify, Netflix, Agua, Luz, Internet, HBO_Max, Prime]
+servicios=[['Spotify',5000], ['Netflix',6000], Agua=['Agua',35000], Luz=['Luz',20000], Internet=['Internet',30000], ['HBO Max',4000], ['Prime',2500]]
+colones=0
+dolares=0
+bitcoin=0
+
 
 #Este es el programa que se ejecuta cuando el usuario selecciona la primera opcion
 def registro_Usuario():
@@ -299,7 +294,131 @@ def registro_Usuario():
 def usuario_Registrado():
     #Por el momento se  esta trabajando en esta parte del programa
     #Se imprimira un mensaje base para verificar que si esta jalando correctamente el programa
-    print('Usuario registrado')
+    print(' ')
+    contador=1
+    perfil=118080084
+    contra=1234
+    usuario=int(input('Ingrese su numero de cédula: '))
+    if usuario!=perfil:
+        for i in range(2):
+            print('')
+            print('No tenemos registro del número de cédula mencionado')
+            print('')
+            usuario=int(input('Ingrese su numero de cédula: '))
+            contador=contador+1   
+    else:
+        print('')
+        senha=int(input('Ingrese su contrasena: '))
+        if senha!=contra:
+            for i in range(2):
+                print('')
+                print('Contrasena incorrecta')
+                print('')
+                senha=int(input('Ingrese su contrasena: '))
+                contador=contador+1
+        else:
+            print('   ')        
+            print('******************************************************')
+            print('*                                                    *')
+            print('*                                                    *')
+            print('*                * GLOBAL BANK Inc *                 *')
+            print('*                *******************                 *')
+            print('*                                                    *')
+            print('*                                                    *')
+            print('*    1) RETIRAR DINERO                               *')
+            print('*    2) DEPOSITO DINERO                              *')
+            print('*    3) VER SALDO ACTUAL                             *')
+            print('*    4) PAGAR SERVICIOS                              *')
+            print('*    5) COMPRA/VENTA DE DIVISAS                      *')
+            print('*    6) ELIMINAR USUARIO                             *')
+            print('*    7) SALIR                                        *')
+            print('*                                                    *')
+            print('*                                                    *')
+            print('******************************************************')
+            entrada2=int(input(''))
+            while entrada2>7:
+                print('   ')        
+                print('******************************************************')
+                print('*                                                    *')
+                print('*                                                    *')
+                print('*                * GLOBAL BANK Inc *                 *')
+                print('*                *******************                 *')
+                print('*                                                    *')
+                print('*                                                    *')
+                print('*    1) RETIRAR DINERO                               *')
+                print('*    2) DEPOSITO DINERO                              *')
+                print('*    3) VER SALDO ACTUAL                             *')
+                print('*    4) PAGAR SERVICIOS                              *')
+                print('*    5) COMPRA/VENTA DE DIVISAS                      *')
+                print('*    6) ELIMINAR USUARIO                             *')
+                print('*    7) SALIR                                        *')
+                print('*                                                    *')
+                print('*                                                    *')
+                print('******************************************************')
+                entrada2=int(input(''))
+            if entrada2==1:
+                print('')
+                print('Cuentas disponibles: ')
+                print('1) Colones')
+                print('2) Dolares')
+                print('3) Bitcoin')
+                print('')
+                entrada3=int(input('De cual cuenta  desea retirar? '))
+                while entrada3>3:
+                    print('')
+                    print('Cuentas disponibles: ')
+                    print('1) Colones')
+                    print('2) Dolares')
+                    print('3) Bitcoin')
+                    print('')
+                    entrada3=int(input('De cual cuenta  desea retirar? '))
+                if entrada3==1:
+                    retiro=float(input('Cual es el monto que desea retirar'))
+                    
+                
+            elif entrada2==2:
+
+            elif entrada2==3:
+
+            elif entrada2==4:
+
+            elif entrada2==5:
+
+            elif entrada2==6:
+                
+        
+    while contador==3:
+        #Se reinicia el contador de errores
+        contador=1
+        #Se informa al usuario que supero el intento de tentativas y se devuelve al menu principal 
+        print('   ')        
+        print('******************************************************')
+        print('*                                                    *')
+        print('*                                                    *')
+        print('*                * GLOBAL BANK Inc *                 *')
+        print('*                *******************                 *')
+        print('*                                                    *')
+        print('*    Se supero el intento máximo de tentativas!      *')
+        print('*                                                    *')
+        print('*    SELECCIONE LA OPCCIÓN A ELEGIR                  *')
+        print('*                                                    *')
+        print('*                                                    *')
+        print('*    1) Registrar nuevo usuario                      *')
+        print('*                                                    *')
+        print('*    2) Usuario registrado                           *')
+        print('*                                                    *')
+        print('*    3) Configuración Avanzada                       *')
+        print('*                                                    *')
+        print('*    4) Salir                                        *')
+        print('*                                                    *')
+        print('*                                                    *')
+        print('******************************************************')
+        #Se abre la opcion que el cliente pueda seleccionar una opcion 
+        entrada=int(input(''))
+
+
+    
+    
 
 #Este programa se abre cuando se selecciona la tercera opcion del menu
 
@@ -728,88 +847,15 @@ while entrada==1:
     registro_Usuario()
     print('')
     #Se informa que se registro el usuario con exito
-    print('Se registro el usuario con exito')
-    print('')
-    #Se imprime un menu al usuario con todas la opciones a escoger
-    print('******************************************************')
-    print('*                                                    *')
-    print('*                                                    *')
-    print('*                * GLOBAL BANK Inc *                 *')
-    print('*                *******************                 *')
-    print('*                                                    *')
-    print('*    BIENVENIDO!                                     *')
-    print('*                                                    *')
-    print('*    SELECCIONE LA OPCCIÓN A ELEGIR                  *')
-    print('*                                                    *')
-    print('*                                                    *')
-    print('*    1) Registrar nuevo usuario                      *')
-    print('*                                                    *')
-    print('*    2) Usuario registrado                           *')
-    print('*                                                    *')
-    print('*    3) Configuración Avanzada                       *')
-    print('*                                                    *')
-    print('*    4) Salir                                        *')
-    print('*                                                    *')
-    print('*                                                    *')
-    print('******************************************************')
-    #Se abre la  opcion al usuario que pueda seleccionar la opcion que desea
-    entrada=int(input(''))
-
+    
 while entrada==2:
     usuario_Registrado()
     print('')
-    #Se imprime un menu al usuario con todas la opciones a escoger
-    print('******************************************************')
-    print('*                                                    *')
-    print('*                                                    *')
-    print('*                * GLOBAL BANK Inc *                 *')
-    print('*                *******************                 *')
-    print('*                                                    *')
-    print('*    BIENVENIDO!                                     *')
-    print('*                                                    *')
-    print('*    SELECCIONE LA OPCCIÓN A ELEGIR                  *')
-    print('*                                                    *')
-    print('*                                                    *')
-    print('*    1) Registrar nuevo usuario                      *')
-    print('*                                                    *')
-    print('*    2) Usuario registrado                           *')
-    print('*                                                    *')
-    print('*    3) Configuración Avanzada                       *')
-    print('*                                                    *')
-    print('*    4) Salir                                        *')
-    print('*                                                    *')
-    print('*                                                    *')
-    print('******************************************************')
-    #Se abre la  opcion al usuario que pueda seleccionar la opcion que desea
-    entrada=int(input(''))
 
 while entrada==3:
     configuracion_Avanzada()
     print('')
-    #Se imprime un menu al usuario con todas la opciones a escoger
-    print('******************************************************')
-    print('*                                                    *')
-    print('*                                                    *')
-    print('*                * GLOBAL BANK Inc *                 *')
-    print('*                *******************                 *')
-    print('*                                                    *')
-    print('*    BIENVENIDO!                                     *')
-    print('*                                                    *')
-    print('*    SELECCIONE LA OPCCIÓN A ELEGIR                  *')
-    print('*                                                    *')
-    print('*                                                    *')
-    print('*    1) Registrar nuevo usuario                      *')
-    print('*                                                    *')
-    print('*    2) Usuario registrado                           *')
-    print('*                                                    *')
-    print('*    3) Configuración Avanzada                       *')
-    print('*                                                    *')
-    print('*    4) Salir                                        *')
-    print('*                                                    *')
-    print('*                                                    *')
-    print('******************************************************')
-    #Se abre la  opcion al usuario que pueda seleccionar la opcion que desea
-    entrada=int(input(''))
+    
     
 
 
